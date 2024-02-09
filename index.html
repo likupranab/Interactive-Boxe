@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+<title>Interactive Boxes</title>
+
+</head>
+<body>
+<div style="margin-top: 60px;">
+    <h3>Interactive Boxes......</h3>
+<div class="container">
+    
+    <div class="box" onclick="toggleOptions('top')">Top Box</div>
+    <div class="options" id="topOptions">
+        <div class="boxmanage">
+            <label for="color">Color:</label>
+            <select id="color">
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+        </div>
+        <div>
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box" onclick="toggleOptions('middle')">Middle Box</div>
+    <div class="options" id="middleOptions">
+        <div class="boxmanage">
+            <label for="color">Color:</label>
+            <select id="color">
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+        </div>
+        <div>
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box" onclick="toggleOptions('bottom')">Bottom Box</div>
+    <div class="options" id="bottomOptions">
+        <div class="boxmanage">
+            <label for="color">Color:</label>
+            <select id="color">
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+        </div>
+        <div>
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    function toggleOptions(boxId) {
+        var options = document.getElementById(boxId + 'Options');
+        var allOptions = document.querySelectorAll('.options');
+        allOptions.forEach(function(opt) {
+            if (opt !== options) {
+                opt.style.height = '0'; // Close other options
+            }
+        });
+        options.style.height = options.style.height === '0px' ? 'auto' : '0'; // Toggle height
+    }
+</script>
+
+</body>
+</html>
